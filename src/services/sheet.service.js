@@ -1,13 +1,23 @@
 import ApiService from "./api.service";
 
-export default class SheetService {
-  async pingSheet() {
+const SheetService = {
+  async uploadSheet(file) {
     try {
-      const data = await ApiService.get('/sheets/ping');
-      return data;
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await ApiService.post('/sheets/send', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+
+      return response;
     } catch (error) {
-      console.error('Error pinging sheet:', error);
+      console.error('Error uploading sheet:', error);
       throw error;
     }
   }
 }
+
+export default SheetService;

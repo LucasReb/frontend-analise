@@ -1,25 +1,33 @@
 <template>
   <div>
-    <h1>{{ responseData }}</h1>
-    <Button @api-response="handleApiResponse" />
+    <input type="file" @change="handleFileUpload">
+    <button @click="uploadFile">Upload</button>
   </div>
 </template>
 
 <script>
-import Button from '@/components/Button.vue';
+import SheetService from '@/services/sheet.service';
 
 export default {
-  components: {
-    Button
-  },
   data() {
     return {
-      responseData: null
+      file: null
     };
   },
+
   methods: {
-    async handleApiResponse(response) {
-      this.responseData = response; 
+    handleFileUpload(event) {
+      this.file = event.target.files[0];
+      console.log(this.file)
+    },
+
+    async uploadFile() {
+      try {
+        const response = await SheetService.uploadSheet(this.file);
+        console.log(response);
+      } catch (error) {
+        console.error('Error uploading file:', error);
+      }
     }
   }
 };
