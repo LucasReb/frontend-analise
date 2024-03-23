@@ -28,6 +28,7 @@
 <script>
 import SheetService from '@/services/sheet.service';
 import { useToast } from "vue-toastification";
+import { isProxy, toRaw } from 'vue';
 
 export default {
     data() {
@@ -53,6 +54,8 @@ export default {
 
                 this.finished = true
                 this.analise = response
+
+                console.log(toRaw(this.analise))
             } catch (error) {
                 useToast().error("Erro no upload!", {
                     timeout: 2000
@@ -109,6 +112,7 @@ export default {
 .upload-text {
     font-size: 18px;
     margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .upload-button {
