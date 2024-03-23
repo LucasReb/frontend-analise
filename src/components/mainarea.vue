@@ -14,7 +14,13 @@
             </div>
         </div>
         <div v-else>
-            <span class="dashboard-text">Dashboard</span>
+            <div style="width: 100%; display: flex; justify-content: space-between;">
+                <span class="dashboard-text">Dashboard</span>
+                <button class="upload-button" @click="openFilePicker">
+                    <span v-if="this.file != null">Novo Upload</span>
+                </button>
+                <input type="file" ref="fileInput" class="file-input" accept=".xlsx" @change="uploadFile">
+            </div>
         </div>
     </div>
 </template>
@@ -35,6 +41,8 @@ export default {
     methods: {
         async uploadFile(event) {
             try {
+                this.file = null
+
                 this.file = event.target.files[0];
 
                 useToast().info("Processando dados!", {
@@ -43,9 +51,8 @@ export default {
 
                 const response = await SheetService.uploadSheet(this.file);
 
-                console.log(response)
-
                 this.finished = true
+                this.analise = response
             } catch (error) {
                 useToast().error("Erro no upload!", {
                     timeout: 2000
@@ -60,7 +67,6 @@ export default {
         },
 
         openFilePicker() {
-            this.file = null
             this.$refs.fileInput.click();
         }
     }
