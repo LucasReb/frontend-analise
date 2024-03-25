@@ -10,17 +10,10 @@
                     <i class="pi pi-upload sidebar-icon" style=""></i>
                     <p style="font-weight: 700;">Upload</p>
                 </div>
-                <div class="sidebar-btn">
-                    <i class="pi pi-code sidebar-icon"></i>
-                    <p>Desenvolvedor</p>
-                </div>
             </div>
         </div>
     </div>
 </template>
-
-<script>
-</script>
 
 <style>
 @import 'primeicons/primeicons.css';
@@ -72,7 +65,7 @@
 
 .main-sidebar {
     height: 100%;
-    width: 16rem;
+    width: 14rem;
     position: fixed;
     left: 0;
     top: 0;
