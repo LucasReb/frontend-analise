@@ -308,7 +308,6 @@ export default {
             }
 
             if (this.analise) {
-                console.log(this.analise);
             } else {
                 useToast().error("Análise não pôde ser realizada devido a erros nos dados.", { timeout: 2000 });
             }

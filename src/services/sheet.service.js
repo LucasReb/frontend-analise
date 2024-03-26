@@ -1,4 +1,4 @@
-import ApiService from "./api.server";
+import ApiService from "./api.service";
 
 const SheetService = {
   async uploadSheet(file) {

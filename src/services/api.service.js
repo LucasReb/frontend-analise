@@ -2,7 +2,8 @@ import axios from 'axios';
 
 const ApiService = {
   init() {
-    axios.defaults.baseURL = 'http://localhost:3000';
+    axios.defaults.baseURL = "http://3.145.181.174/";
+    console.log(import.meta.env.MODE)
   },
 
   async get(resource) {
