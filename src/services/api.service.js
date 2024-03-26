@@ -3,7 +3,7 @@ import axios from 'axios';
 const ApiService = {
   init() {
     axios.defaults.baseURL = "http://3.145.181.174/";
-    console.log(import.meta.env.MODE)
+    console.log(import.meta.env.MODE, import.meta.env.BASE_URL)
   },
 
   async get(resource) {
