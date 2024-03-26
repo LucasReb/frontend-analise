@@ -1,29 +1,25 @@
-# client
+# análise.
 
 This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## Requisitos
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Node.js;
+- Vue.js
+- Vite
 
-## Customize configuration
+## Como rodar o projeto:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Instalar
 
-## Project Setup
-
-```sh
-npm install
+```bash
+$ npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Rodar no modo desenvolvimento
 
-```sh
-npm run dev
+```bash
+# development
+$ npm run dev
 ```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Com isso o servidor será aberto no localhost
