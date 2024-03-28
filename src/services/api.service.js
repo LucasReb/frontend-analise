@@ -2,11 +2,7 @@ import axios from 'axios';
 
 const ApiService = {
   init() {
-    if (import.meta.env.MODE == "production ") {
       axios.defaults.baseURL = "https://backend-analise.vercel.app/";
-    } else {
-      axios.defaults.baseURL = "http://localhost:3000";
-    }
   },
 
   async get(resource) {
