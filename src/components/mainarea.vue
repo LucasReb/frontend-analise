@@ -67,6 +67,7 @@
                     <div style="width: 90%; margin-top: -12px;">
                         <apexchart :options="usersByMonthChartOptions" :series="usersByMonth" type="line">
                         </apexchart>
+                        <Analytics />
                     </div>
                 </div>
             </div>
@@ -78,6 +79,7 @@
 import VueApexCharts from 'vue3-apexcharts';
 import SheetService from '@/services/sheet.service';
 import { useToast } from "vue-toastification";
+import { Analytics } from "@vercel/analytics/react"
 
 export default {
     components: {
